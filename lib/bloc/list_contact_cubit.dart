@@ -1,6 +1,9 @@
 import 'package:blocmocfile/bloc/list_contacts_state.dart';
 import 'package:blocmocfile/model/contactModel.dart';
+import 'package:blocmocfile/pages/contact_create.dart';
 import 'package:blocmocfile/service/network.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListContactCubit extends Cubit<ListContactState>{
@@ -26,4 +29,11 @@ void apiPostList()async{
    }
  }
 
+ void callCreatePage(BuildContext context)async{
+   var result = await  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Create()));
+   if(result != null){
+     BlocProvider.of<ListContactCubit>(context).apiPostList();
+   }
+ 
+ }
 }

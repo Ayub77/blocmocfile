@@ -10,7 +10,7 @@ class Contacts {
         fullName = json['fullName'],
         phone = json['phone'];
 
-  Map<String, dynamic> toJson() => {
+  Map<String, String> toJson() => {
         'id': id,
         'fullName': fullName,
         'phone': phone,

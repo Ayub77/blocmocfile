@@ -72,15 +72,9 @@ class Network {
     return params;
   }
 
-  // static Map<String, String> paramsCreate(Post post) {
-  //   Map<String, String> params = new Map();
-  //   params.addAll({
-  //     'title': post.title,
-  //     'body': post.body,
-  //     'userId': post.userId.toString(),
-  //   });
-  //   return params;
-  // }
+  static Map<String, String> paramsCreate(Contacts contact) { 
+    return contact.toJson();
+  }
 
   // static Map<String, String> paramsUpdate(Post post) {
   //   Map<String, String> params = new Map();
