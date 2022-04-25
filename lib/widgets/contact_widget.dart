@@ -19,11 +19,7 @@ class itemOfContact extends StatelessWidget {
       children: [
         SlidableAction(
           onPressed: (value){
-          // Navigator.of(context).push(MaterialPageRoute(builder: (context) => UpdateAndAdd(title: "Update",id: post.id.toString(),))).then((value){
-          //    if(value){
-           
-          //    }
-          //  });
+       BlocProvider.of<ListContactCubit>(context).callUpdatePage(context,contact);
           },
          backgroundColor: Colors.indigo,
          icon: Icons.edit,

@@ -1,6 +1,7 @@
 import 'package:blocmocfile/bloc/list_contacts_state.dart';
 import 'package:blocmocfile/model/contactModel.dart';
 import 'package:blocmocfile/pages/contact_create.dart';
+import 'package:blocmocfile/pages/contact_update_page.dart';
 import 'package:blocmocfile/service/network.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,13 @@ void apiPostList()async{
    if(result != null){
      BlocProvider.of<ListContactCubit>(context).apiPostList();
    }
+}
+
+void callUpdatePage(BuildContext context,Contacts contact)async{
+   var result = await  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Update(contact: contact,)));
+   if(result != null){
+     BlocProvider.of<ListContactCubit>(context).apiPostList();
+   }  
  
  }
 }
